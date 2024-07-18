@@ -1,5 +1,6 @@
 package cn.dyx.middleware.dynamic.thread.pool.sdk.config;
 
+import cn.dyx.middleware.dynamic.thread.pool.sdk.common.queue.MyDynamicLinkedBlockingQueue;
 import cn.dyx.middleware.dynamic.thread.pool.sdk.domain.DynamicThreadPoolService;
 import cn.dyx.middleware.dynamic.thread.pool.sdk.domain.IDynamicThreadPoolService;
 import cn.dyx.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity;
@@ -7,8 +8,11 @@ import cn.dyx.middleware.dynamic.thread.pool.sdk.domain.model.valobj.RegistryEnu
 import cn.dyx.middleware.dynamic.thread.pool.sdk.registry.IRegistry;
 import cn.dyx.middleware.dynamic.thread.pool.sdk.registry.redis.RedisRegistry;
 import cn.dyx.middleware.dynamic.thread.pool.sdk.trigger.job.ThreadPoolDataReportJob;
+import cn.dyx.middleware.dynamic.thread.pool.sdk.trigger.listener.ThreadPoolConfigAdjustListener;
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang.StringUtils;
 import org.redisson.Redisson;
+import org.redisson.api.RTopic;
 import org.redisson.api.RedissonClient;
 import org.redisson.codec.JsonJacksonCodec;
 import org.redisson.config.Config;
@@ -84,9 +88,17 @@ public class DynamicThreadPoolAutoConfig {
             ThreadPoolConfigEntity threadPoolConfigEntity =
                     redissonClient.<ThreadPoolConfigEntity>getBucket(RegistryEnumVO.THREAD_POOL_CONFIG_PARAMETER_LIST_KEY.getKey() + "_" + applicationName + "_" + threadPoolKey).get();
             if (null == threadPoolConfigEntity) continue;
+            logger.info("{}", JSON.toJSONString(threadPoolConfigEntity));
             ThreadPoolExecutor threadPoolExecutor = threadPoolExecutorMap.get(threadPoolKey);
             threadPoolExecutor.setCorePoolSize(threadPoolConfigEntity.getCorePoolSize());
             threadPoolExecutor.setMaximumPoolSize(threadPoolConfigEntity.getMaximumPoolSize());
+            // 调整队列大小
+            try {
+                MyDynamicLinkedBlockingQueue queue = (MyDynamicLinkedBlockingQueue)threadPoolExecutor.getQueue();
+                queue.setCapacity(threadPoolConfigEntity.getRemainingCapacity());
+            }catch (ClassCastException e){
+                logger.error("使用的队列类型无法改变容量 {}",e.getMessage());
+            }
         }
 
         return new DynamicThreadPoolService(applicationName, threadPoolExecutorMap);
@@ -95,5 +107,17 @@ public class DynamicThreadPoolAutoConfig {
     @Bean
     public ThreadPoolDataReportJob threadPoolDataReportJob(IDynamicThreadPoolService dynamicThreadPoolService, IRegistry registry) {
         return new ThreadPoolDataReportJob(dynamicThreadPoolService, registry);
+    }
+
+    @Bean
+    public ThreadPoolConfigAdjustListener threadPoolConfigAdjustListener(IDynamicThreadPoolService dynamicThreadPoolService, IRegistry registry) {
+        return new ThreadPoolConfigAdjustListener(dynamicThreadPoolService, registry);
+    }
+
+    @Bean(name = "dynamicThreadPoolRedisTopic")
+    public RTopic threadPoolConfigAdjustListener(RedissonClient redissonClient, ThreadPoolConfigAdjustListener threadPoolConfigAdjustListener) {
+        RTopic topic = redissonClient.getTopic(RegistryEnumVO.DYNAMIC_THREAD_POOL_REDIS_TOPIC.getKey() + "_" + applicationName);
+        topic.addListener(ThreadPoolConfigEntity.class, threadPoolConfigAdjustListener);
+        return topic;
     }
 }

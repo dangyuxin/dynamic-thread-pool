@@ -160,6 +160,8 @@ label {
             <input type="number" id="corePoolSize" name="corePoolSize"><br>
             <label for="maximumPoolSize">最大线程数:</label><br>
             <input type="number" id="maximumPoolSize" name="maximumPoolSize"><br>
+            <label for="maximumPoolSize">最大队列数:</label><br>
+            <input type="number" id="remainingCapacity" name="remainingCapacity"><br>
             <button type="button" onclick="updateConfig()">确认修改</button>
         </form>
     </div>
@@ -265,6 +267,7 @@ label {
                         document.getElementById('threadPoolName').value = response.data.threadPoolName;
                         document.getElementById('corePoolSize').value = response.data.corePoolSize;
                         document.getElementById('maximumPoolSize').value = response.data.maximumPoolSize;
+                        document.getElementById('remainingCapacity').value = response.data.remainingCapacity;
                         // ... (填充其他只读字段) ...
                         modal.style.display = "block";
                     } else {
@@ -286,6 +289,7 @@ label {
             var threadPoolName = document.getElementById('threadPoolName').value;
             var corePoolSize = document.getElementById('corePoolSize').value;
             var maximumPoolSize = document.getElementById('maximumPoolSize').value;
+            var remainingCapacity = document.getElementById('remainingCapacity').value;
 
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'http://localhost:8089/api/v1/dynamic/thread/pool/update_thread_pool_config', true);
@@ -311,7 +315,8 @@ label {
                 appName: appName,
                 threadPoolName: threadPoolName,
                 corePoolSize: parseInt(corePoolSize, 10),
-                maximumPoolSize: parseInt(maximumPoolSize, 10)
+                maximumPoolSize: parseInt(maximumPoolSize, 10),
+                remainingCapacity: parseInt(remainingCapacity,10)
             }));
         }
 

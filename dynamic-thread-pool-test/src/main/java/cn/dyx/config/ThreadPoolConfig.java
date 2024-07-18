@@ -1,5 +1,6 @@
 package cn.dyx.config;
 
+import cn.dyx.middleware.dynamic.thread.pool.sdk.common.queue.MyDynamicLinkedBlockingQueue;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,7 @@ public class ThreadPoolConfig {
                 properties.getMaxPoolSize(),
                 properties.getKeepAliveTime(),
                 TimeUnit.SECONDS,
-                new LinkedBlockingQueue<>(properties.getBlockQueueSize()),
+                new MyDynamicLinkedBlockingQueue<>(properties.getBlockQueueSize()),
                 Executors.defaultThreadFactory(),
                 handler);
     }
@@ -75,7 +76,7 @@ public class ThreadPoolConfig {
                 properties.getMaxPoolSize(),
                 properties.getKeepAliveTime(),
                 TimeUnit.SECONDS,
-                new LinkedBlockingQueue<>(properties.getBlockQueueSize()),
+                new MyDynamicLinkedBlockingQueue<>(properties.getBlockQueueSize()),
                 Executors.defaultThreadFactory(),
                 handler);
     }

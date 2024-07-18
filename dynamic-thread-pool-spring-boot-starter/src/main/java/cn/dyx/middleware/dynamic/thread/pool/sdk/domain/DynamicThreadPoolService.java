@@ -1,5 +1,6 @@
 package cn.dyx.middleware.dynamic.thread.pool.sdk.domain;
 
+import cn.dyx.middleware.dynamic.thread.pool.sdk.common.queue.MyDynamicLinkedBlockingQueue;
 import cn.dyx.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity;
 import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
@@ -78,6 +80,14 @@ public class DynamicThreadPoolService implements IDynamicThreadPoolService {
         // 设置参数 「调整核心线程数和最大线程数」
         threadPoolExecutor.setCorePoolSize(threadPoolConfigEntity.getCorePoolSize());
         threadPoolExecutor.setMaximumPoolSize(threadPoolConfigEntity.getMaximumPoolSize());
+        // 调整队列大小
+        try {
+            MyDynamicLinkedBlockingQueue queue = (MyDynamicLinkedBlockingQueue)threadPoolExecutor.getQueue();
+            queue.setCapacity(threadPoolConfigEntity.getRemainingCapacity());
+        }catch (ClassCastException e){
+            logger.error("使用队列无法扩容 {}",e.getMessage());
+        }
+
     }
 
 }
