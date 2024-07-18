@@ -1,0 +1,218 @@
+24-07-18.10:37:12.523 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 12360 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:37:12.525 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:37:13.198 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:37:13.200 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:37:13.221 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-07-18.10:37:13.575 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:37:13.581 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:37:13.581 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:37:13.581 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:37:13.678 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:37:13.678 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1107 ms
+24-07-18.10:37:14.094 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:37:14.752 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:37:14.786 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:37:14.851 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dynamicThreadPollService' defined in class path resource [cn/dyx/middleware/dynamic/thread/pool/sdk/config/DynamicThreadPoolAutoConfig.class]: Invalid factory method 'dynamicThreadPollService' on class [cn.dyx.middleware.dynamic.thread.pool.sdk.config.DynamicThreadPoolAutoConfig]: needs to have a non-void return type!
+24-07-18.10:37:14.863 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+24-07-18.10:37:14.871 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+24-07-18.10:37:14.893 [main            ] ERROR SpringApplication      - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dynamicThreadPollService' defined in class path resource [cn/dyx/middleware/dynamic/thread/pool/sdk/config/DynamicThreadPoolAutoConfig.class]: Invalid factory method 'dynamicThreadPollService' on class [cn.dyx.middleware.dynamic.thread.pool.sdk.config.DynamicThreadPoolAutoConfig]: needs to have a non-void return type!
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:623)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at cn.dyx.Application.main(Application.java:11)
+24-07-18.10:38:37.885 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 14880 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:38:37.886 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:38:38.437 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:38:38.438 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:38:38.454 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-07-18.10:38:38.800 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:38:38.805 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:38:38.806 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:38:38.806 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:38:38.905 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:38:38.906 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 979 ms
+24-07-18.10:38:39.259 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:38:39.915 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:38:39.943 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:38:40.005 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:38:40.269 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:38:40.291 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:38:40.298 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:38:40.306 [main            ] INFO  Application            - Started Application in 2.781 seconds (JVM running for 3.663)
+24-07-18.10:41:48.482 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 11672 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:41:48.484 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:41:49.047 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:41:49.049 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:41:49.066 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-07-18.10:41:49.399 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:41:49.404 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:41:49.404 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:41:49.404 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:41:49.498 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:41:49.498 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 975 ms
+24-07-18.10:41:49.862 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:41:50.492 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:41:50.525 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:41:50.646 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:41:50.914 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:41:50.934 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:41:50.940 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:41:50.948 [main            ] INFO  Application            - Started Application in 2.804 seconds (JVM running for 3.626)
+24-07-18.10:45:16.224 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 8380 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:45:16.226 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:45:16.781 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:45:16.782 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:45:16.798 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-07-18.10:45:17.131 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:45:17.138 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:45:17.138 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:45:17.138 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:45:17.233 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:45:17.233 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 968 ms
+24-07-18.10:45:17.584 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:45:18.238 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:45:18.272 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:45:18.390 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:45:18.633 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:45:18.653 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:45:18.663 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:45:18.671 [main            ] INFO  Application            - Started Application in 2.816 seconds (JVM running for 3.684)
+24-07-18.10:46:10.881 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 5320 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:46:10.882 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:46:11.460 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:46:11.462 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:46:11.478 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+24-07-18.10:46:11.787 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:46:11.792 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:46:11.792 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:46:11.792 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:46:11.887 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:46:11.887 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 965 ms
+24-07-18.10:46:12.250 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:46:12.878 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:46:12.909 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:46:13.058 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:46:13.296 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:46:13.316 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:46:13.322 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:46:13.329 [main            ] INFO  Application            - Started Application in 2.801 seconds (JVM running for 3.664)
+24-07-18.10:46:28.303 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 19968 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:46:28.304 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:46:28.852 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:46:28.853 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:46:28.869 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-07-18.10:46:29.188 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:46:29.193 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:46:29.193 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:46:29.194 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:46:29.291 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:46:29.291 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 948 ms
+24-07-18.10:46:29.640 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:46:30.299 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:46:30.332 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:46:30.453 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:46:30.687 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:46:30.710 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:46:30.717 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:46:30.724 [main            ] INFO  Application            - Started Application in 2.767 seconds (JVM running for 3.614)
+24-07-18.10:50:29.131 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 15056 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:50:29.133 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:50:29.706 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:50:29.708 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:50:29.724 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+24-07-18.10:50:30.052 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:50:30.057 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:50:30.057 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:50:30.057 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:50:30.152 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:50:30.153 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 977 ms
+24-07-18.10:50:30.514 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:50:31.172 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:50:31.204 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:50:31.324 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:50:31.563 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:50:31.584 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:50:31.594 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:50:31.601 [main            ] INFO  Application            - Started Application in 2.83 seconds (JVM running for 3.733)
+24-07-18.10:52:36.576 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 16884 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:52:36.578 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:52:37.126 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:52:37.128 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:52:37.144 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+24-07-18.10:52:37.466 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:52:37.471 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:52:37.471 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:52:37.472 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:52:37.566 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:52:37.566 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 949 ms
+24-07-18.10:52:37.684 [main            ] INFO  ThreadPoolConfig       - threadPoolExecutor01
+24-07-18.10:52:37.684 [main            ] INFO  ThreadPoolConfig       - threadPoolExecutor01
+24-07-18.10:52:37.918 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:52:38.574 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:52:38.606 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:52:38.726 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:52:38.956 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:52:38.975 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:52:38.985 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:52:38.992 [main            ] INFO  Application            - Started Application in 2.761 seconds (JVM running for 3.635)
+24-07-18.10:53:47.244 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 14928 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:53:47.246 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:53:47.843 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:53:47.846 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:53:47.861 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-07-18.10:53:48.167 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:53:48.172 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:53:48.172 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:53:48.172 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:53:48.269 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:53:48.270 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 981 ms
+24-07-18.10:53:48.378 [main            ] INFO  ThreadPoolConfig       - threadPoolExecutor01
+24-07-18.10:53:48.379 [main            ] INFO  ThreadPoolConfig       - threadPoolExecutor02
+24-07-18.10:53:48.640 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:53:48.694 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:53:49.328 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:53:49.362 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:53:49.685 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:53:49.704 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:53:49.711 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:53:49.718 [main            ] INFO  Application            - Started Application in 2.834 seconds (JVM running for 3.7)
+24-07-18.10:54:26.027 [main            ] INFO  Application            - Starting Application using Java 1.8.0_202 on DESKTOP-6TFP7P2 with PID 5216 (C:\Users\Admin\Desktop\git\dynamic-thread-pool\dynamic-thread-pool-test\target\classes started by Admin in C:\Users\Admin\Desktop\git\dynamic-thread-pool)
+24-07-18.10:54:26.038 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-07-18.10:54:26.627 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-07-18.10:54:26.629 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-07-18.10:54:26.645 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+24-07-18.10:54:26.962 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-07-18.10:54:26.968 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-07-18.10:54:26.968 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-07-18.10:54:26.968 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-07-18.10:54:27.063 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-07-18.10:54:27.063 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 985 ms
+24-07-18.10:54:27.177 [main            ] INFO  ThreadPoolConfig       - threadPoolExecutor01
+24-07-18.10:54:27.178 [main            ] INFO  ThreadPoolConfig       - threadPoolExecutor02
+24-07-18.10:54:27.363 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic-thread-pool-test-app
+24-07-18.10:54:27.423 [main            ] INFO  DynamicThreadPoolAutoConfig - ["threadPoolExecutor01","threadPoolExecutor02"]
+24-07-18.10:54:27.502 [main            ] INFO  Version                - Redisson 3.26.0
+24-07-18.10:54:28.129 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:54:28.161 [redisson-netty-1-20] INFO  ConnectionsHolder      - 24 connections initialized for localhost/127.0.0.1:6379
+24-07-18.10:54:28.450 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-07-18.10:54:28.472 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-07-18.10:54:28.479 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-07-18.10:54:28.486 [main            ] INFO  Application            - Started Application in 2.804 seconds (JVM running for 3.662)
