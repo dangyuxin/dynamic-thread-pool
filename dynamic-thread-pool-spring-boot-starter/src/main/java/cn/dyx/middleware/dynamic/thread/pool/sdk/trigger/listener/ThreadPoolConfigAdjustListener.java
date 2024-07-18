@@ -32,8 +32,18 @@ public class ThreadPoolConfigAdjustListener implements MessageListener<ThreadPoo
     public void onMessage(CharSequence charSequence, ThreadPoolConfigEntity threadPoolConfigEntity) {
         logger.info("动态线程池，调整线程池配置。线程池名称:{} 核心线程数:{} 最大线程数:{} 最大队列数{}", threadPoolConfigEntity.getThreadPoolName(),
                 threadPoolConfigEntity.getCorePoolSize(), threadPoolConfigEntity.getMaximumPoolSize(),
-                threadPoolConfigEntity.getQueueSize());
-        dynamicThreadPoolService.updateThreadPoolConfig(threadPoolConfigEntity);
+                threadPoolConfigEntity.getRemainingCapacity());
+
+        try {
+            dynamicThreadPoolService.updateThreadPoolConfig(threadPoolConfigEntity);
+        }catch (ClassCastException e){
+            logger.error("使用队列无法扩容 {}",e.getMessage());
+            return;
+        }catch (IllegalArgumentException e){
+            logger.error("队列容量不可少于当前队列中任务数量{}",e.getMessage());
+            return;
+        }
+
 
         // 更新后上报最新数据
         List<ThreadPoolConfigEntity> threadPoolConfigEntities = dynamicThreadPoolService.queryThreadPoolList();

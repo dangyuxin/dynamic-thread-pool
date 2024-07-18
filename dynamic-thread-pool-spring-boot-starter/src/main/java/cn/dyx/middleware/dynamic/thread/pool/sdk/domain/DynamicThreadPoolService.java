@@ -72,7 +72,7 @@ public class DynamicThreadPoolService implements IDynamicThreadPoolService {
     }
 
     @Override
-    public void updateThreadPoolConfig(ThreadPoolConfigEntity threadPoolConfigEntity) {
+    public void updateThreadPoolConfig(ThreadPoolConfigEntity threadPoolConfigEntity){
         if (null == threadPoolConfigEntity || !applicationName.equals(threadPoolConfigEntity.getAppName())) return;
         ThreadPoolExecutor threadPoolExecutor = threadPoolExecutorMap.get(threadPoolConfigEntity.getThreadPoolName());
         if (null == threadPoolExecutor) return;
@@ -85,7 +85,9 @@ public class DynamicThreadPoolService implements IDynamicThreadPoolService {
             MyDynamicLinkedBlockingQueue queue = (MyDynamicLinkedBlockingQueue)threadPoolExecutor.getQueue();
             queue.setCapacity(threadPoolConfigEntity.getRemainingCapacity());
         }catch (ClassCastException e){
-            logger.error("使用队列无法扩容 {}",e.getMessage());
+            throw e;
+        }catch (IllegalArgumentException e){
+            throw e;
         }
 
     }

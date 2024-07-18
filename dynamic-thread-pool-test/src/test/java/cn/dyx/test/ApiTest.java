@@ -44,7 +44,7 @@ public class ApiTest {
         for (int i = 0; i < 100; i++) {
             threadPoolExecutor.execute(()->{
                 try {
-                    TimeUnit.SECONDS.sleep(50);
+                    TimeUnit.SECONDS.sleep(15);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
